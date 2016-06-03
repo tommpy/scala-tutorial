@@ -28,16 +28,32 @@ class CharacterSpec extends WordSpec with MustMatchers {
   "Name Extractor" should {
     "get all the first names" in {
       val firstNames = Seq("Tyrion", "Jaime", "Cersei", "Daenerys", "Jon", "Petyr", "Jorah", "Sansa",
-                           "Arya", "Sandor", "Joffrey", "Catelyn", "Tywin", "Roose", "Sandor", "Gregor",
+                           "Arya", "Sandor", "Joffrey", "Catelyn", "Tywin", "Roose", "Ramsay", "Obara", "Sandor", "Gregor",
                            "Varys")
       getFirstNames(characters) mustBe firstNames
     }
 
     "get all the houses" in {
       val houses = Seq("Lannister", "Targaryen", "Snow", "Baelish", "Mormont",
-                        "Stark", "Clegane", "Baratheon", "Bolton")
+                        "Stark", "Clegane", "Baratheon", "Bolton", "Sand")
 
       getHouses(characters) mustBe houses
+    }
+
+    "Find that Jon Snow is a bastard" in {
+      isBastard(Character("Jon Snow")) mustBe true
+    }
+
+    "Find that Obara Sand is a bastard" in {
+      isBastard(Character("Obara Sand")) mustBe true
+    }
+
+    "Find that Ned Stark is not a bastard" in {
+      isBastard(Character("Ned Stark")) mustBe false
+    }
+
+    "Locate all the bastards in a list" in {
+      findMeTheBastards(characters) mustBe Seq(Character("Jon Snow"), Character("Ramsay Snow"), Character("Obara Sand"))
     }
   }
 }

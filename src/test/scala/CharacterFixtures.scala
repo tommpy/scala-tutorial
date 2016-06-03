@@ -15,6 +15,8 @@ object CharacterFixtures {
                        Character("Catelyn Stark"),
                        Character("Tywin Lannister"),
                        Character("Roose Bolton"),
+                       Character("Ramsay Snow"),
+                       Character("Obara Sand"),
                        Character("Sandor Clegane"),
                        Character("Gregor Clegane"),
                        Character("Varys")
