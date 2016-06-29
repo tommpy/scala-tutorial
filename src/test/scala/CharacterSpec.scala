@@ -28,14 +28,14 @@ class CharacterSpec extends WordSpec with MustMatchers {
   "Name Extractor" should {
     "get all the first names" in {
       val firstNames = Seq("Tyrion", "Jaime", "Cersei", "Daenerys", "Jon", "Petyr", "Jorah", "Sansa",
-                           "Arya", "Sandor", "Joffrey", "Catelyn", "Tywin", "Roose", "Ramsay", "Obara", "Sandor", "Gregor",
-                           "Varys")
+                           "Arya", "Sandor", "Joffrey", "Renly", "Robert", "Stannis", "Catelyn", "Tywin", "Roose", "Ramsay", "Obara", "Gregor",
+                           "Varys", "Mace", "Olenna", "Benjen")
       getFirstNames(characters) mustBe firstNames
     }
 
     "get all the houses" in {
       val houses = Seq("Lannister", "Targaryen", "Snow", "Baelish", "Mormont",
-                        "Stark", "Clegane", "Baratheon", "Bolton", "Sand")
+                        "Stark", "Clegane", "Baratheon", "Bolton", "Sand", "Tyrell")
 
       getHouses(characters) mustBe houses
     }
